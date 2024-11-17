@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartesian Plane Background</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Prevent scrollbars */
+            background-color: black; /* Background color for better contrast */
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -100; /* Ensures canvas is behind other content */
+        }
+
+        #top-right-text {
+            position: absolute;
+            top: 5%; /* Adjust this value to move vertically */
+            right: 10%; /* Adjust this value to move horizontally */
+            text-align: left; /* Align text to the left */
+            font-size: 16px;
+            line-height: 1.5; /* Adjust line spacing for readability */
+            color: #6A5ACD; /* Soft purple for the text */
+        }
+
+        #top-right-text p {
+            margin: 10px 0; /* Add spacing between each line */
+        }
+
+        #top-left-text {
+            position: absolute;
+            top: 10%; /* Adjust this value to move vertically */
+            left: 10%; /* Adjust this value to move horizontally */
+            text-align: left; /* Align text to the left */
+            font-size: 16px;
+            line-height: 1.5; /* Adjust line spacing for readability */
+            color: #FF4500; /* Orange color for the text */
+        }
+
+        #top-left-text p {
+            margin: 10px 0; /* Add spacing between lines */
+        }
+
+
+        #bottom-left-text {
+        position: absolute;
+        bottom: 10%; /* Adjust this value to move vertically */
+        left: 10%; /* Adjust this value to move horizontally */
+        text-align: left; /* Align text to the left */
+        font-size: 16px;
+        line-height: 1.5; /* Adjust line spacing for readability */
+        color: #FF4500; /* Orange color for the first line */
+        }
+
+        #bottom-left-text p:nth-child(1) {
+            color: #FF4500; /* Orange for the first line */
+            font-weight: bold; /* Emphasize the first line */
+        }
+
+        #bottom-left-text p:nth-child(2) {
+            color: #0000FF; /* Blue for the second line */
+        }
+
+        #bottom-left-text p {
+            margin: 10px 0; /* Add spacing between lines */
+        }
+
+        #bottom-right-text {
+            position: absolute;
+            bottom: 10%; /* Adjust this value to move vertically */
+            right: 10%; /* Adjust this value to move horizontally */
+            text-align: right; /* Align text to the right */
+            font-size: 16px;
+            line-height: 1.5; /* Adjust line spacing for readability */
+            color: #0000FF; /* Default blue color for the text */
+        }
+
+        #bottom-right-text p {
+            margin: 10px 0; /* Add spacing between lines */
+        }
+
+        #bottom-right-text p:nth-child(3) {
+            color: #FF4500; /* Orange color for the third line */
+            font-weight: bold; /* Emphasize the third line */
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Title -->
+    <h1 style="color: white; text-align: center; position: relative; z-index: 1; margin-top: -5px;">Rice Innovation Metrics</h1>
+    
+    <!-- Canvas for the Cartesian plane -->
+    <canvas id="backgroundCanvas"></canvas>
+    
+    <!-- Top-right text -->
+    <div id="top-right-text">
+        <p>all programs affiliations that leads<br>startups to be funded</p>
+        <p># of Rice start-ups<br>(funded & not-funded)</p>
+        <p>Pre vs. Post: # of people participating in<br>entrepreneurship programs</p>
+        <p># of applications for grants (ISS & OGL) y-o-y</p>
+        <p># of labs with spinoffs y-o-y</p>
+        <p>What % of IPs get licensed /<br>commercialized every year (separately)</p>
+        <p>#/name of external program/accelerator<br>applications y-o-y *</p>
+        <p>Awards assigned to startups</p>
+    </div>
+
+    <!-- Top Left Text -->
+    <div id="top-left-text">
+        <p>Industries that the start-ups<br>are making an impact in</p>
+        <p># of startups out of each school</p>
+    </div>
+
+    <!-- Bottom left Text -->
+    <div id="bottom-left-text">
+        <p>total # of established clients*</p>
+        <p>for companies funded over the last 5 years,<br>how many are still in business</p>
+    </div>
+
+    <!-- Bottom right text -->
+    <div id="bottom-right-text">
+        <p>Total $$ that all funded companies have raised</p>
+        <p>y-o-y aggregate valuation of portfolio companies</p>
+        <p style="color: #FF4500;">Total # of jobs created ?*</p>
+        <p>Total # of start-ups exited (acquired or IPO)</p>
+    </div>
+    
+    
+
+    <!-- JavaScript for the Cartesian plane -->
+    <script src="script.js"></script>
+</body>
+</html>
