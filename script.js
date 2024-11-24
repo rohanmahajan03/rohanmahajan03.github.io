@@ -18,7 +18,7 @@ function drawCartesianPlane() {
     ctx.clearRect(0, 0, width, height);
 
     // Set line styles
-    ctx.strokeStyle = 'white'; // White color for the axes
+    ctx.strokeStyle = 'black'; // White color for the axes
     ctx.lineWidth = 2;
 
     // Draw X-axis (horizontal line)
@@ -34,7 +34,7 @@ function drawCartesianPlane() {
     ctx.stroke();
 
     // Add labels to the axes
-    ctx.fillStyle = 'white'; // Text color
+    ctx.fillStyle = 'black'; // Text color
     ctx.font = '20px Arial'; // Font style
 
     // X-axis labels
@@ -53,3 +53,26 @@ window.addEventListener('resize', resizeCanvas);
 
 // Initial setup
 resizeCanvas();
+
+// Open modal on button click
+document.querySelectorAll('.transparent-button').forEach(button => {
+    button.addEventListener('click', () => {
+        const modalId = button.getAttribute('data-modal');
+        document.getElementById(modalId).style.display = 'block';
+    });
+});
+
+// Close modal when 'X' is clicked
+document.querySelectorAll('.close').forEach(closeBtn => {
+    closeBtn.addEventListener('click', () => {
+        closeBtn.closest('.modal').style.display = 'none';
+    });
+});
+
+// Close modal when clicking outside the content
+window.addEventListener('click', (event) => {
+    if (event.target.classList.contains('modal')) {
+        event.target.style.display = 'none';
+    }
+});
+
