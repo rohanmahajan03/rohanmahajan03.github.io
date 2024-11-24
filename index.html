@@ -57,15 +57,6 @@
         color: #FF4500; /* Orange color for the first line */
         }
 
-        #bottom-left-text p:nth-child(1) {
-            color: #FF4500; /* Orange for the first line */
-            font-weight: bold; /* Emphasize the first line */
-        }
-
-        #bottom-left-text p:nth-child(2) {
-            color: #0000FF; /* Blue for the second line */
-        }
-
         #bottom-left-text p {
             margin: 10px 0; /* Add spacing between lines */
         }
@@ -130,8 +121,17 @@
             color: black;
             float: right;
             font-size: 20px;
-            cursor: pointer;
-}
+            cursor: pointer;       
+        }
+        .entrepreneurial-growth {
+            color: purple;
+        }
+        .non-financial-impact {
+            color: orange;
+        }
+        .financial-impact {
+            color: blue;
+        }
 
 
 
@@ -139,8 +139,16 @@
 </head>
 
 <body>
-    <!-- Title -->
-    <h1 style="color: black; text-align: center; position: relative; z-index: 1; margin-top: -5px;">Rice Innovation Metrics</h1>
+    
+    <!-- Title / Legend-->
+    <div style="border-color: red; background-color: #f2eeed; position: fixed; top: 3%; left: 3%">
+        <h1 >Rice Innovation Metrics</h1>
+        <ul style="margin-top: -20px">
+            <li style="font-weight: bold; color: purple;">Entrepreneurial Growth At Rice</li>
+            <li style="font-weight: bold; color: blue;">Portfolio Company Financial Success</li>
+            <li style="font-weight: bold; color: orange;">Portfolio Company Non-Financial Impact</li>
+        </ul>
+    </div>
     
     <!-- Canvas for the Cartesian plane -->
     <canvas id="backgroundCanvas"></canvas>
@@ -148,68 +156,68 @@
     <!-- Top-right text -->
     <div id="top-right-text">
         <button class="transparent-button" data-modal="affiliations-modal" style="position: fixed; top: 5%; right: 5%">
-            All programs affiliations that lead<br>startups to be funded
+            <p class="entrepreneurial-growth">All programs affiliations that lead<br>startups to be funded</p>
         </button>
         <button class="transparent-button" data-modal="rice-startups-modal" style="position: fixed; top: 11%; right: 10%">
-            # of Rice start-ups<br>(funded & not-funded)
+            <p class="entrepreneurial-growth"># of Rice start-ups<br>(funded & not-funded)</p>
         </button>
         <button class="transparent-button" data-modal="pre-post-participation-modal" style="position: fixed; top: 17%; right: 3%">
-            Pre vs. Post: # of people participating in<br>entrepreneurship programs
+            <p class="entrepreneurial-growth">Pre vs. Post: # of people participating in<br>entrepreneurship programs</p>
         </button>
         <button class="transparent-button" data-modal="grant-applications-modal" style="position: fixed; top: 23%; right: 3%">
-            # of applications for grants (ISS & OGL) y-o-y
+            <p class="entrepreneurial-growth"># of applications for grants (ISS & OGL) y-o-y</p>
         </button>
         <button class="transparent-button" data-modal="labs-spinoffs-modal" style="position: fixed; top: 27%; right: 8%">
-            # of labs with spinoffs y-o-y
+            <p class="entrepreneurial-growth"># of labs with spinoffs y-o-y</p>
         </button>
         <button class="transparent-button" data-modal="ip-licensed-modal" style="position: fixed; top: 32%; right: 5%">
-            What % of IPs get licensed /<br>commercialized every year (separately)
+            <p class="entrepreneurial-growth">What % of IPs get licensed /<br>commercialized every year (separately)</p>
         </button>
         <button class="transparent-button" data-modal="external-programs-modal" style="position: fixed; top: 38%; right: 20%">
-            #/Name of external program/accelerator<br>applications y-o-y *
+            <p class="non-financial-impact">#/Name of external program/accelerator<br>applications y-o-y *</p>
         </button>
-        <button class="transparent-button" data-modal="startup-awards-modal" style="position: fixed; top: 46%; right: 38%">
-            Awards assigned to startups
+        <button class="transparent-button" data-modal="startup-awards-modal" style="position: fixed; top: 45%; right: 38%">
+            <p class="non-financial-impact">Awards assigned to startups</p>
         </button>
     </div>
 
     <!-- Top Left Text -->
     <div id="top-left-text">
         <button class="transparent-button" data-modal="industry-modal" style="position: fixed; top: 38%; right: 78%">
-            Industries that the start-ups<br>are making an impact in
+            <p class="non-financial-impact">Industries that the start-ups are making an <br> impact in & percentage of funds allocated for each</p>
         </button>
         <button class="transparent-button" data-modal="school-modal" style="position: fixed; top: 45%; right: 60%">
-            # of startups out of each school
+            <p class="entrepreneurial-growth"># of startups out of each school</p>
         </button>
     </div>
 
     <!-- Bottom left Text -->
     <div id="bottom-left-text" >
         <button class="transparent-button" data-modal="total-established-clients-modal" style="position: fixed; top: 77%; right: 75%">
-            total # of established clients*
+            <p class="non-financial-impact">total # of established clients*</p>
         </button>
         <button class="transparent-button" data-modal="5-year-modal">
-            for companies funded over the last 5 years,
-            <br>how many are still in business
+            <p class="financial-impact">for companies funded over the last 5 years,
+                <br>how many are still in business</p>
         </button>
         <button class="transparent-button" data-modal="revenue-metric-modal" style="position: fixed; top: 67%; right: 50%">
-            Number and Percent of <br> start-ups making revenue
+            <p class="financial-impact">Number and Percent of <br> start-ups making revenue</p>
         </button>
     </div>
 
     <!-- Bottom right text -->
     <div id="bottom-right-text">
         <button class="transparent-button" style="position: fixed; top: 55%; right: 25%;" data-modal="modal-1">
-            Total $$ that all funded companies have raised
+            <p class="financial-impact">Total $$ that all funded companies have raised</p>
         </button>
         <button class="transparent-button" data-modal="modal-2" style="position: fixed; top:73%; right:25%">
-            y-o-y aggregate valuation of portfolio companies
+            <p class="financial-impact">y-o-y aggregate valuation of portfolio companies</p>
         </button>
         <button class="transparent-button" data-modal="modal-3" style="color: #FF4500; position: fixed; right: 40%; top: 80%;">
-            Total # of jobs created ?*
+            <p class="non-financial-impact">Total # of jobs created ?*</p>
         </button>
         <button class="transparent-button" data-modal="modal-4" style="position: fixed; top: 90%; right:5%">
-            Total # of start-ups exited (acquired or IPO)
+            <p class="financial-impact">Total # of start-ups exited (acquired or IPO)</p>
         </button>
     </div>
     

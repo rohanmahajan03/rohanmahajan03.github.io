@@ -43,9 +43,22 @@ function drawCartesianPlane() {
     ctx.fillText('Higher Level of Importance', (3 * width) / 4 + 140, height / 2 + 30); // Right-side label
 
     // Y-axis labels
-    ctx.textAlign = 'right';
-    ctx.fillText('Long Term', width / 2 - 10, height / 4 - 140); // Top label
-    ctx.fillText('Short Term', width / 2 - 10, (3 * height) / 4 + 140); // Bottom label
+    // Y-axis labels
+    // Top label (rotated)
+    ctx.save(); // Save the canvas state
+    ctx.translate(width / 2 - 10, height / 4 - 140); // Move to the text position
+    ctx.rotate(-Math.PI / 2); // Rotate 90 degrees counterclockwise
+    ctx.textAlign = 'center'; // Align text properly for rotation
+    ctx.fillText('Long Term', 0, 0); // Draw the text at the new origin
+    ctx.restore(); // Restore canvas state
+
+    // Bottom label (rotated)
+    ctx.save(); // Save the canvas state
+    ctx.translate(width / 2 - 10, (3 * height) / 4 + 140); // Move to the text position
+    ctx.rotate(-Math.PI / 2); // Rotate 90 degrees counterclockwise
+    ctx.textAlign = 'center'; // Align text properly for rotation
+    ctx.fillText('Short Term', 0, 0); // Draw the text at the new origin
+    ctx.restore(); // Restore canvas state
 }
 
 // Adjust canvas size when the window is resized
