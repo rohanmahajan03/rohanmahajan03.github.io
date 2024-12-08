@@ -49,7 +49,7 @@ function drawCartesianPlane() {
     ctx.translate(width / 2 - 10, height / 4 - 140); // Move to the text position
     ctx.rotate(-Math.PI / 2); // Rotate 90 degrees counterclockwise
     ctx.textAlign = 'center'; // Align text properly for rotation
-    ctx.fillText('Long Term', 0, 0); // Draw the text at the new origin
+    ctx.fillText('Short Term', 0, 0); // Draw the text at the new origin
     ctx.restore(); // Restore canvas state
 
     // Bottom label (rotated)
@@ -57,7 +57,7 @@ function drawCartesianPlane() {
     ctx.translate(width / 2 - 10, (3 * height) / 4 + 140); // Move to the text position
     ctx.rotate(-Math.PI / 2); // Rotate 90 degrees counterclockwise
     ctx.textAlign = 'center'; // Align text properly for rotation
-    ctx.fillText('Short Term', 0, 0); // Draw the text at the new origin
+    ctx.fillText('Long Term', 0, 0); // Draw the text at the new origin
     ctx.restore(); // Restore canvas state
 }
 
