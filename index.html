@@ -11,6 +11,10 @@
             background-color: white; /* Background color for better contrast */
         }
 
+        body, h1, h2, h3, h4, h5, h6, p, button, li, ul, div, canvas {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Apply to all text elements */
+        }
+
         canvas {
             position: absolute;
             top: 0;
@@ -97,32 +101,75 @@
 
         /* Modal styles */
         .modal {
-            display: none; /* Hidden by default */
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.5); /* Black with transparency */
-        }
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with transparency */
+}
 
-        .modal-content {
-            background-color: white;
-            margin: 15% auto;
-            padding: 20px;
-            border-radius: 10px;
-            width: 60%;
-            text-align: center;
-        }
+.modal-content {
+    background: linear-gradient(135deg, #ffffff, #f8f9fa); /* Soft gradient background */
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners */
+    width: 70%;
+    text-align: left; /* Align content to the left */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    border: 1px solid #dee2e6; /* Light border for definition */
+    font-family: 'Arial', sans-serif; /* Professional font */
+    color: #343a40; /* Dark gray for text */
+}
 
-        .close {
-            color: black;
-            float: right;
-            font-size: 20px;
-            cursor: pointer;       
-        }
+/* Header */
+.modal-content p:first-child {
+    font-size: 24px;
+    font-weight: bold;
+    color: #495057; /* Darker gray for emphasis */
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e9ecef; /* Line for separation */
+    padding-bottom: 10px;
+}
+
+/* Section headers */
+.modal-content p[style*="font-weight: bold;"] {
+    font-size: 18px;
+    margin-top: 15px;
+    color: #007bff; /* Primary blue for headers */
+}
+
+/* Regular content */
+.modal-content p:not([style*="font-weight: bold;"]):not(:first-child) {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 5px;
+    color: #495057; /* Standard gray for body text */
+}
+
+/* Close button */
+.close {
+    color: #6c757d; /* Neutral gray */
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #dc3545; /* Red for hover or focus */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Add padding between sections */
+.modal-content p + p[style*="font-weight: bold;"] {
+    margin-top: 20px;
+}
         .entrepreneurial-growth {
             color: purple;
         }
@@ -144,7 +191,7 @@
     <div style="border-color: red; background-color: #f2eeed; position: fixed; top: 3%; left: 3%">
         <h1 >Rice Innovation Metrics</h1>
         <ul style="margin-top: -20px">
-            <li style="font-weight: bold; color: purple;">Entrepreneurial Growth At Rice</li>
+            <li style="font-weight: bold; color: purple; ">Entrepreneurial Growth At Rice</li>
             <li style="font-weight: bold; color: blue;">Portfolio Company Financial Success</li>
             <li style="font-weight: bold; color: orange;">Portfolio Company Non-Financial Impact</li>
         </ul>
@@ -156,7 +203,7 @@
     <!-- Top-right text -->
     <div id="top-right-text">
         <button class="transparent-button" data-modal="affiliations-modal" style="position: fixed; top: 5%; right: 5%">
-            <p class="entrepreneurial-growth">All programs affiliations that lead<br>startups to be funded</p>
+            <p class="entrepreneurial-growth" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">All programs affiliations that lead<br>startups to be funded</p>
         </button>
         <button class="transparent-button" data-modal="rice-startups-modal" style="position: fixed; top: 11%; right: 10%">
             <p class="entrepreneurial-growth"># of Rice start-ups<br>(funded & not-funded)</p>
@@ -167,11 +214,11 @@
         <button class="transparent-button" data-modal="grant-applications-modal" style="position: fixed; top: 23%; right: 3%">
             <p class="entrepreneurial-growth"># of applications for grants (ISS & OGL) y-o-y</p>
         </button>
-        <button class="transparent-button" data-modal="labs-spinoffs-modal" style="position: fixed; top: 27%; right: 8%">
+        <!-- <button class="transparent-button" data-modal="labs-spinoffs-modal" style="position: fixed; top: 27%; right: 8%">
             <p class="entrepreneurial-growth"># of labs with spinoffs y-o-y</p>
-        </button>
-        <button class="transparent-button" data-modal="ip-licensed-modal" style="position: fixed; top: 32%; right: 5%">
-            <p class="entrepreneurial-growth">What % of IPs get licensed /<br>commercialized every year (separately)</p>
+        </button> -->
+        <button class="transparent-button" data-modal="ip-licensed-modal" style="position: fixed; top: 27%; right: 5%">
+            <p class="entrepreneurial-growth"># and % of labs IPs that get licensed and commercialized y-o-y (seperately)</p>
         </button>
         <button class="transparent-button" data-modal="external-programs-modal" style="position: fixed; top: 38%; right: 20%">
             <p class="non-financial-impact">#/Name of external program/accelerator<br>applications y-o-y *</p>
@@ -184,7 +231,7 @@
     <!-- Top Left Text -->
     <div id="top-left-text">
         <button class="transparent-button" data-modal="industry-modal" style="position: fixed; top: 38%; right: 78%">
-            <p class="non-financial-impact">Industries that the start-ups are making an <br> impact in & percentage of funds allocated for each</p>
+            <p class="non-financial-impact">Industries that the start-ups are making an impact in & percentage of funds allocated for each</p>
         </button>
         <button class="transparent-button" data-modal="school-modal" style="position: fixed; top: 45%; right: 60%">
             <p class="entrepreneurial-growth"># of startups out of each school</p>
@@ -213,7 +260,7 @@
         <button class="transparent-button" data-modal="modal-2" style="position: fixed; top:73%; right:25%">
             <p class="financial-impact">y-o-y aggregate valuation of portfolio companies</p>
         </button>
-        <button class="transparent-button" data-modal="modal-3" style="color: #FF4500; position: fixed; right: 40%; top: 80%;">
+        <button class="transparent-button" data-modal="modal-3" style=" position: fixed; right: 40%; top: 80%;">
             <p class="non-financial-impact">Total # of jobs created ?*</p>
         </button>
         <button class="transparent-button" data-modal="modal-4" style="position: fixed; top: 90%; right:5%">
